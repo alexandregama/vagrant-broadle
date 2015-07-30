@@ -10,3 +10,9 @@ Vagrant Broadle for all vagrant configuration for Broadle Ecommerce
 
 #### Executing Vagrant
 * vagrant up
+
+#### Sign-in into db or web server
+* vagrant ssh db
+* vagrant ssh web
+
+
