@@ -15,4 +15,9 @@ Vagrant Broadle for all vagrant configuration for Broadle Ecommerce
 * vagrant ssh db
 * vagrant ssh web
 
+#### Prepare db server, installing mysql
+* vagrant ssh db
+* sudo apt-get update
+* sudo apt-get install mysql-server
+
 
