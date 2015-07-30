@@ -7,3 +7,6 @@ Vagrant Broadle for all vagrant configuration for Broadle Ecommerce
 
 #### Loading Linux Ubuntu 12.04 LTS 32 bits
 * vagrant box add hashicorp/precise32
+
+#### Executing Vagrant
+* vagrant up
