@@ -20,4 +20,15 @@ Vagrant Broadle for all vagrant configuration for Broadle Ecommerce
 * sudo apt-get update
 * sudo apt-get install mysql-server
 
+#### Installing vim
+* sudo apt-get install vim
+
+#### Open mysql connection to the World 
+* create `allow_external.conf` file
+* `sudo vim /etc/mysql/conf.d/allow_external.cnf`
+* write the following content
+```
+[mysqld]
+      bind-address = 0.0.0.0
+```
 
