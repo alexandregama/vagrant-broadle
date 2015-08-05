@@ -128,3 +128,8 @@ Deploy
 ```
 $ sudo apt-get install git maven2 openjdk-6-jdk
 ```
+
+#### Cloning git repository
+```
+$ git clone https://github.com/dtsato/loja-virtual-devops.git
+```
