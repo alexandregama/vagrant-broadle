@@ -28,7 +28,7 @@ $ exit
 $ ctrl+D
 ```
 
-Prepare db server, installing mysql
+Preparing Database Server
 ----------------------------------------
 ```
 $ vagrant ssh db
@@ -66,7 +66,7 @@ create database loja_schema
 grant all privileges on loja_schema to 'loja'@'%' identified by 'lojasecret';
 ```
 
-Preparing web server
+Preparing Web Server
 --------------------
 
 #### Updating apt-get
