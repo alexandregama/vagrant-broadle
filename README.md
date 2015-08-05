@@ -133,3 +133,37 @@ $ sudo apt-get install git maven2 openjdk-6-jdk
 ```
 $ git clone https://github.com/dtsato/loja-virtual-devops.git
 ```
+
+#### Installing project dependencies
+```
+$ cd loja-virtual-devops
+$ export MAVEN_OPTS=-Xmx256m
+$ mvn install
+```
+
+#### Updating DataSource 
+```
+$ sudo vim /var/lib/tomcat7/conf/context.xml
+```
+
+#### The context.xml needs to have the following Resource fot each source
+
+```xml
+<Resource name="jdbc/web" auth="Container"
+      type="javax.sql.DataSource" maxActive="100" maxIdle="30"
+      maxWait="10000" username="loja" password="lojasecret"
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://192.168.33.10:3306/loja_schema"/>
+      
+<Resource name="jdbc/secure" auth="Container"
+      type="javax.sql.DataSource" maxActive="100" maxIdle="30"
+      maxWait="10000" username="loja" password="lojasecret"
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://192.168.33.10:3306/loja_schema"/>
+      
+ <Resource name="jdbc/storage" auth="Container"
+      type="javax.sql.DataSource" maxActive="100" maxIdle="30"
+      maxWait="10000" username="loja" password="lojasecret"
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://192.168.33.10:3306/loja_schema"/>      
+```
