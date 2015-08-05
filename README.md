@@ -1,4 +1,4 @@
-# vagrant-broadle
+# Vagrant Broadle
 Vagrant Broadle for all vagrant configuration for Broadle Ecommerce
 
 
@@ -18,6 +18,13 @@ vagrant up
 vagrant ssh db
 vagrant ssh web
 ``` 
+
+#### Sign-out from db or web server, with thw following commands
+```
+logout
+exit
+ctrl+D
+```
 
 #### Prepare db server, installing mysql
 ```
@@ -40,4 +47,20 @@ sudo apt-get install vim
 [mysqld]
       bind-address = 0.0.0.0
 ```
+
+#### Restarting mysql
+```
+sudo service mysql restart
+```
+
+#### Creating database
+```
+create database loja_schema
+```
+
+#### Grant privileges to `loja` user
+```
+grant all privileges on loja_schema to 'loja'@'%' identified by 'lojasecret';
+```
+
 
