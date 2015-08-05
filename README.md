@@ -67,4 +67,17 @@ grant all privileges on loja_schema to 'loja'@'%' identified by 'lojasecret';
 Preparing web server
 --------------------
 
+#### Updating apt-get
+```
+sudo apt-get update
+```
 
+#### Installing tomcat7 and mysql-client
+```
+sudo apt-get install tomcat7 mysql-client
+```
+
+#### Open web address to check if everything is ok
+```
+http://192.168.33.12:8080
+```
