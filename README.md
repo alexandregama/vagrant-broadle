@@ -120,3 +120,11 @@ $ sudo /etc/default/tomcat
 ```xml
 JAVA_OPTS="-Djava.awt.headless=true -Xmx512M -XX:+UseConcMarkSweepGC"
 ```
+
+Deploy
+------
+
+#### Installing Git, Maven and JDK
+```
+$ sudo apt-get install git maven2 openjdk-6-jdk
+```
