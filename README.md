@@ -55,13 +55,16 @@ sudo service mysql restart
 ```
 
 #### Creating database
-```
+```sql
 create database loja_schema
 ```
 
 #### Grant privileges to loja user
-```
+```sql
 grant all privileges on loja_schema to 'loja'@'%' identified by 'lojasecret';
 ```
+
+Preparing web server
+--------------------
 
 
