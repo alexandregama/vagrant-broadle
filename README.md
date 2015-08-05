@@ -26,7 +26,8 @@ exit
 ctrl+D
 ```
 
-#### Prepare db server, installing mysql
+Prepare db server, installing mysql
+----------------------------------------
 ```
 vagrant ssh db
 sudo apt-get update
@@ -58,7 +59,7 @@ sudo service mysql restart
 create database loja_schema
 ```
 
-#### Grant privileges to `loja` user
+#### Grant privileges to loja user
 ```
 grant all privileges on loja_schema to 'loja'@'%' identified by 'lojasecret';
 ```
