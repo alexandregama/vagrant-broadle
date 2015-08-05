@@ -91,3 +91,22 @@ $ cd /var/lib/tomcat7/conf
 $ sudo keytool -genkey -alias tomcat -keyalg RSA -keystore .keystore
 ```
 
+#### Enabling SSL conector into Tomcat
+```
+$ vim /var/lib/tomcat/conf/server.xml
+```
+
+#### Remove comments from the following content
+```xml
+<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS" />
+```
+
+#### Refresh server.xml with the keystore file and password
+```xml
+<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               keystoreFile="conf/.keystore" keystorePass="secret"
+               clientAuth="false" sslProtocol="TLS" />
+```
