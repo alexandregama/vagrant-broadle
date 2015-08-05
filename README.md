@@ -10,38 +10,38 @@ Vagrant Broadle for all vagrant configuration for Broadle Ecommerce
 
 #### Executing Vagrant
 ``` 
-vagrant up
+$ vagrant up
 ```
 
 #### Sign-in into db or web server
 ``` 
-vagrant ssh db
-vagrant ssh web
+$ vagrant ssh db
+$ vagrant ssh web
 ``` 
 
 #### Sign-out from db or web server, with thw following commands
 ```
-logout
-exit
-ctrl+D
+$ logout
+$ exit
+$ ctrl+D
 ```
 
 Prepare db server, installing mysql
 ----------------------------------------
 ```
-vagrant ssh db
-sudo apt-get update
-sudo apt-get install mysql-server
+$ vagrant ssh db
+$ sudo apt-get update
+$ sudo apt-get install mysql-server
 ```
 
 #### Installing vim
 ```
-sudo apt-get install vim
+$ sudo apt-get install vim
 ```
 
 #### Open mysql connection to the World 
 * create `allow_external.conf` file
-* `sudo vim /etc/mysql/conf.d/allow_external.cnf`
+* `$ sudo vim /etc/mysql/conf.d/allow_external.cnf`
 * write the following content
 
 ```
@@ -51,7 +51,7 @@ sudo apt-get install vim
 
 #### Restarting mysql
 ```
-sudo service mysql restart
+$ sudo service mysql restart
 ```
 
 #### Creating database
@@ -69,15 +69,25 @@ Preparing web server
 
 #### Updating apt-get
 ```
-sudo apt-get update
+$ sudo apt-get update
 ```
 
 #### Installing tomcat7 and mysql-client
 ```
-sudo apt-get install tomcat7 mysql-client
+$ sudo apt-get install tomcat7 mysql-client
 ```
 
 #### Open web address to check if everything is ok
 ```
 http://192.168.33.12:8080
 ```
+
+Configuring SSL
+--------------------
+
+#### Configuring SSL conector
+```
+$ cd /var/lib/tomcat7/conf
+$ sudo keytool -genkey -alias tomcat -keyalg RSA -keystore .keystore
+```
+
