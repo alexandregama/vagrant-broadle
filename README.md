@@ -93,7 +93,7 @@ $ sudo keytool -genkey -alias tomcat -keyalg RSA -keystore .keystore
 
 #### Enabling SSL conector into Tomcat
 ```
-$ vim /var/lib/tomcat/conf/server.xml
+$ sudo vim /var/lib/tomcat/conf/server.xml
 ```
 
 #### Remove comments from the following content
@@ -109,4 +109,14 @@ $ vim /var/lib/tomcat/conf/server.xml
                maxThreads="150" scheme="https" secure="true"
                keystoreFile="conf/.keystore" keystorePass="secret"
                clientAuth="false" sslProtocol="TLS" />
+```
+
+#### Increasing Tomcat7 memory
+```
+$ sudo /etc/default/tomcat
+```
+
+#### Updating JAVA_OPTS default to 512M:
+```xml
+JAVA_OPTS="-Djava.awt.headless=true -Xmx512M -XX:+UseConcMarkSweepGC"
 ```
