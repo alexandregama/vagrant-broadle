@@ -182,4 +182,6 @@ vagrant ssh monitor
 
 ```bash
 $ echo "Package: nagios* Pin: release n=raring Pin-Priority: 990" | sudo tee /etc/apt/preferences.d/nagios
+
+$ echo "deb http://archive.ubuntu.com/ubuntu \raring main" | sudo tee /etc/apt/sources.list.d/raring.list
 ```
