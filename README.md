@@ -169,3 +169,17 @@ $ sudo vim /var/lib/tomcat7/conf/context.xml
       driverClassName="com.mysql.jdbc.Driver"
       url="jdbc:mysql://192.168.33.10:3306/loja_schema"/>      
 ```
+
+## Nagios Monitoring Server
+
+After update the Vagrantfile and inserted nagios monitoring machine, we need to login into server
+
+```bash
+vagrant ssh monitor
+```
+
+##### We need to update Nagios Package, with the following command
+
+```bash
+$ echo "Package: nagios* Pin: release n=raring Pin-Priority: 990" | sudo tee /etc/apt/preferences.d/nagios
+```
