@@ -6,23 +6,23 @@ Vagrant Broadle for all vagrant configuration for Broadle Ecommerce
 * http://www.vagrantup.com/downloads.html
 
 ##### Loading Linux Ubuntu 12.04 LTS 32 bits
-```
+```bash
 $ vagrant box add hashicorp/precise32
 ```
 
 ##### Executing Vagrant
-``` 
+```bash
 $ vagrant up
 ```
 
 ##### Sign-in into db or web server
-``` 
+```bash
 $ vagrant ssh db
 $ vagrant ssh web
 ``` 
 
 ##### Sign-out from db or web server, with thw following commands
-```
+```bash
 $ logout
 $ exit
 $ ctrl+D
@@ -30,14 +30,14 @@ $ ctrl+D
 
 Preparing Database Server
 ----------------------------------------
-```
+```bash
 $ vagrant ssh db
 $ sudo apt-get update
 $ sudo apt-get install mysql-server
 ```
 
 ##### Installing vim
-```
+```bash
 $ sudo apt-get install vim
 ```
 
@@ -46,13 +46,13 @@ $ sudo apt-get install vim
 * `$ sudo vim /etc/mysql/conf.d/allow_external.cnf`
 * write the following content
 
-```
+```bash
 [mysqld]
       bind-address = 0.0.0.0
 ```
 
 ##### Restarting mysql
-```
+```bash
 $ sudo service mysql restart
 ```
 
@@ -70,12 +70,12 @@ Preparing Web Server
 --------------------
 
 ##### Updating apt-get
-```
+```bash
 $ sudo apt-get update
 ```
 
 ##### Installing tomcat7 and mysql-client
-```
+```bash
 $ sudo apt-get install tomcat7 mysql-client
 ```
 
@@ -88,13 +88,13 @@ Configuring SSL
 --------------------
 
 ##### Configuring SSL conector
-```
+```bash
 $ cd /var/lib/tomcat7/conf
 $ sudo keytool -genkey -alias tomcat -keyalg RSA -keystore .keystore
 ```
 
 ##### Enabling SSL conector into Tomcat
-```
+```bash
 $ sudo vim /var/lib/tomcat7/conf/server.xml
 ```
 
@@ -114,7 +114,7 @@ $ sudo vim /var/lib/tomcat7/conf/server.xml
 ```
 
 ##### Increasing Tomcat7 memory
-```
+```bash
 $ sudo vim /etc/default/tomcat7
 ```
 
@@ -127,24 +127,24 @@ Deploy
 ------
 
 ##### Installing Git, Maven and JDK
-```
+```bash
 $ sudo apt-get install git maven2 openjdk-6-jdk
 ```
 
 ##### Cloning git repository
-```
+```bash
 $ git clone https://github.com/dtsato/loja-virtual-devops.git
 ```
 
 ##### Installing project dependencies
-```
+```bash
 $ cd loja-virtual-devops
 $ export MAVEN_OPTS=-Xmx256m
 $ mvn install
 ```
 
 ##### Updating DataSource 
-```
+```bash
 $ sudo vim /var/lib/tomcat7/conf/context.xml
 ```
 
